@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include "financial.h"
 
-int monthlyBudget = 0;  // Global variable to store the monthly budget
-int currentExpenditure = 0;  // Global variable to track current expenditure
+// aba chai global variables set gareko
+int monthlyBudget = 0;
+int currentExpenditure = 0;
 
 int main() {
     int choice;
+
     do {
         printf("\nPersonal Finance Tracker\n");
         printf("1. Set Monthly Expenditure Target\n");
@@ -15,17 +17,18 @@ int main() {
         printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar(); // Clear newline character
+        getchar(); // sabai leftover input clear garcha
 
-        switch(choice) {
+        switch (choice) {
             case 1:
                 printf("Enter new monthly budget: ");
                 scanf("%d", &monthlyBudget);
-                getchar();
+                getchar(); // Clear newline character
+                printf("Monthly budget set to %d.\n", monthlyBudget);
                 break;
             case 2:
-                if(addFinancialRecord()) {
-                    checkBudget();
+                if (addFinancialRecord()) {
+                    checkBudget(); //  budget check garcha after adding a record
                 }
                 break;
             case 3:
@@ -35,15 +38,16 @@ int main() {
                 printf("Enter Record ID to Delete: ");
                 int id;
                 scanf("%d", &id);
-                getchar();
+                getchar(); 
                 deleteFinancialRecord(id);
                 break;
             case 5:
-                printf("Exiting...\n");
+                printf("Exiting... Add aftwr your new expense\n");
                 break;
             default:
-                printf("Invalid choice. Please try again.\n");
+                printf("Invalid choice. Please try again.later\n");
         }
     } while (choice != 5);
+
     return 0;
 }

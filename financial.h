@@ -1,17 +1,22 @@
+// financial.h
 #ifndef FINANCIAL_H
 #define FINANCIAL_H
 
-#include <stdbool.h>
+// Global variables
+extern int monthlyBudget;
+extern int currentExpenditure;
 
+// Structure for financial records
 typedef struct {
     int id;
-    int amount;
     char description[100];
+    int amount;
 } FinancialRecord;
 
-void checkBudget();
-bool addFinancialRecord();
+// Function prototypes
+int addFinancialRecord();
 void displayFinancialRecords();
 void deleteFinancialRecord(int id);
+void checkBudget();
 
 #endif

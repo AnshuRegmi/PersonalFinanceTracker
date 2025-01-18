@@ -1,8 +1,8 @@
-// financial.h
+
 #ifndef FINANCIAL_H
 #define FINANCIAL_H
+// These lines prevent the header file from being included multiple times by mistake. #ifndef checks if FINANCIAL_H is not defined, and if it isn’t, it defines it. 
 
-// Global variables
 extern int monthlyBudget;
 extern int currentExpenditure;
 

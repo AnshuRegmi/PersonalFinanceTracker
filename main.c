@@ -8,6 +8,8 @@ int currentExpenditure = 0;
 int main() {
     int choice;
 
+    loadRecordsFromFile(); // program suru hune bela records file bata load garcha
+
     do {
         printf("\nPersonal Finance Tracker\n");
         printf("1. Set Monthly Expenditure Target\n");
@@ -28,7 +30,7 @@ int main() {
                 break;
             case 2:
                 if (addFinancialRecord()) {
-                    checkBudget(); //  budget check garcha after adding a record
+                    checkBudget(); // budget check garcha after adding a record
                 }
                 break;
             case 3:
@@ -42,7 +44,7 @@ int main() {
                 deleteFinancialRecord(id);
                 break;
             case 5:
-                printf("Exiting... Add aftwr your new expense\n");
+                printf("Exiting... Add after your new expense\n");
                 break;
             default:
                 printf("Invalid choice. Please try again.later\n");
